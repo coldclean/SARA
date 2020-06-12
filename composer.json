@@ -1,0 +1,6 @@
+{
+    "require": {
+        "google/cloud": "^0.27.0",
+        "google/cloud-vision": "^0.2.0"
+    }
+}

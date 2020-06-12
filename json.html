@@ -1,0 +1,48 @@
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/Mint-1.4.3/build/css-mint.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ 		<script
+  src="https://code.jquery.com/jquery-2.0.2.js"
+  integrity="sha256-0u0HIBCKddsNUySLqONjMmWAZMQYlxTRbA8RfvtCAW0="
+  crossorigin="anonymous"></script>
+
+  <link href="css/uploadfile.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.uploadfile.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var conPar = JSON.stringify({
+  "requests": [
+    {
+      "image": {
+        "content": "archivos/imagenes/menu.jpg"
+      },
+      "features": [
+        {
+          "type": "DOCUMENT_TEXT_DETECTION"
+        }
+      ]
+    }
+  ]
+});
+
+
+		$.getJSON('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAfazHIthveaqKE3IuVrJHuah3f710sVpk',conPar).done(function(data) {
+			$each(data.items,function (i,item ){
+				alert (i,item);
+			})
+		})
+
+
+		});
+</script>
+
+<title>Auditoria de Seriales e Items</title>
+<br><br>
+<h4 align="center" class="blanco"> Módulo de Auditoría Seriales e Items </h4>
+</head>
+
+<body>
